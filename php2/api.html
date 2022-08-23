@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+<button id="button" type='button'>Get Joke</button>
+<p id="setup"></p>
+<p id="punchline"></p>
+
+
+<script>
+document.addEventListener("click", function (event) {
+  // Checking if the button was clicked
+  if (!event.target.matches("#button")) return;
+fetch("<https://api.chucknorris.io/jokes/random>")
+    .then((response) => response.json())
+    .then((data) => console.log(data));  
+
+});
+
+	</script>
+</body>
+</html>
